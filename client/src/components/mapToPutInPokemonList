@@ -1,0 +1,3 @@
+/*{pokemons.map((pokemon) => {
+    return <PokemonCard key={pokemon.id} {...pokemon} />
+})}*/
