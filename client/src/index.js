@@ -27,7 +27,6 @@ const renderApp = () => {
 
 store.dispatch(startSetPokemons()).then(() => {
     renderApp()
-    console.log(store.getState().pokemons)
 })
 
 

@@ -1,6 +1,7 @@
 import React from 'react'
 import PokemonList from './PokemonList'
 
+
 const Dashboard = () => {
     return(
         <div>
@@ -10,6 +11,5 @@ const Dashboard = () => {
         </div>
     )
 }
-
 
 export { Dashboard as default }

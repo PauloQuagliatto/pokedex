@@ -25,7 +25,6 @@
     
     /* Background / White */
 
-    background: $background-type-grass;
     border-radius: 10px;
 }
 
@@ -72,7 +71,7 @@
     width: 120px;
     height: 31px;
 
-/* Pokemon Name */
+    /* Pokemon Name */
 
     font-family: SF Pro Display;
     font-style: normal;
@@ -85,7 +84,6 @@
     color: $text-white;
 }
 
-
 .pokemon-type {
     display: flex;
     flex-direction: column;
@@ -97,12 +95,8 @@
     height: 25px;
     
     /* Type / Grass */
-    
-    background: $background-type-poison;
     border-radius: 3px;
 }
-
-
 
 .pokeball-image {
     position: relative;
@@ -115,95 +109,3 @@
     height: 130px;
     bottom: 145px;
 }
-
-
-/*
-.pokemon-card-type-bug {
-    @extend .pokemon-card;
-    background-color: $background-type-bug;
-}
-
-.pokemon-card-type--dark {
-    @extend .pokemon-card;
-    background-color: $background-type-dark;
-}
-
-.pokemon-card-type--dragon {
-    @extend .pokemon-card;
-    background-color: $background-type-dragon;
-}
-.pokemon-card-type--eletric {
-    @extend .pokemon-card;
-    background-color: $background-type-electric;
-}
-
-.pokemon-card-type--fairy {
-    @extend .pokemon-card;
-    background-color: $background-type-fairy;
-}
-
-.pokemon-card-type--fighting {
-    @extend .pokemon-card;
-    background-color: $background-type-fighting;
-}
-
-
-.pokemon-card-type--fire {
-    @extend .pokemon-card;
-    background-color: $background-type-fire;
-}
-
-.pokemon-card-type--flying {
-    @extend .pokemon-card;
-    background-color: $background-type-flying;
-}
-
-.pokemon-card-type--ghost {
-    @extend .pokemon-card;
-    background-color: $background-type-ghost;
-}
-
-.pokemon-card-type--grass {
-    @extend .pokemon-card;
-    background-color: $background-type-grass;
-}
-
-.pokemon-card-type--ground {
-    @extend .pokemon-card;
-    background-color: $background-type-ground;
-}
-
-.pokemon-card-type--ice {
-    @extend .pokemon-card;
-    background-color: $background-type-ice;
-}
-
-.pokemon-card-type--normal {
-    @extend .pokemon-card;
-    background-color: $background-type-normal;
-}
-
-.pokemon-card-type--poison {
-    @extend .pokemon-card;
-    background-color: $background-type-poison;
-}
-
-.pokemon-card-type--psychic {
-    @extend .pokemon-card;
-    background-color: $background-type-psychic;
-}
-
-.pokemon-card-type--rock {
-    @extend .pokemon-card;
-    background-color: $background-type-rock;
-}
-
-.pokemon-card-type--steel {
-    @extend .pokemon-card;
-    background-color: $background-type-steel;
-}
-
-.pokemon-card-type--water {
-    @extend .pokemon-card;
-    background-color: $background-type-water;
-}*/
