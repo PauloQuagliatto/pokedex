@@ -3,10 +3,12 @@ import PokemonList from './PokemonList'
 
 
 const Dashboard = () => {
-    return(
+    return (
         <div>
-        <h1>Dashboard</h1>
-        <p className="dashboard-description">Search for Pokémon by name or using the National Pokédex number</p>
+            <div className="dashboard-box">
+                <h1 className="dashboard-title">Pokédex</h1>
+                <p className="dashboard-description">Search for Pokémon by name or using the National Pokédex number</p>
+            </div>
             <PokemonList />
         </div>
     )

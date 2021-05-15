@@ -1,3 +1,15 @@
+.dashboard-box {
+    margin: 40px;
+    height: 150px;
+    background-size: cover;
+    background-image: url('../../assets/pokeball-big.svg');
+    background-repeat: no-repeat;
+}
+
+.dashboard-title {
+    font-size: $title;    
+}
+
 .dashboard-description {
     font-size: $description;
     color: $text-grey;

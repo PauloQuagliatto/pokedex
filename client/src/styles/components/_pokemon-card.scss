@@ -29,16 +29,14 @@
 }
 
 .pattern {
-    /* Pattern */
+    /* Position */
     position: relative;
     width: 180px;
     height: 32px;
     top: 5px;
     right: 45px;
 
-    /* Gradient / Vector */
-
-    background: $gradient-vector;
+    
 }
 
 .card-box-types {

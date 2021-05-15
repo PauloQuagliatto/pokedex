@@ -12,6 +12,7 @@ const Filters = (props) => {
     return(
     <div>
         <input 
+            className="filter-input"
             placeholder="Digite nome do pokemon"
             onChange={changeNameFilter}
             value={name}
