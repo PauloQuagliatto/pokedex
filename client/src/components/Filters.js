@@ -4,11 +4,13 @@ import { filterByName } from '../actions/filters'
 
 const Filters = (props) => {
     const [name, setName] = useState(props.filters.name)
+    
     const changeNameFilter = (e) => {
-        const name = e.target.value
-        setName(name)
-        props.dispatch(filterByName(name))
+        const newName = e.target.value
+        setName(newName)
+        props.dispatch(filterByName(newName))
     }
+
     return(
     <div>
         <input 

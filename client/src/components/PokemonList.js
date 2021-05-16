@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-//import selectPokemons from '../selectors/pokemons'
+import selectPokemons from '../selectors/pokemons'
 import PokemonCard from './PokemonCard'
 
 const PokemonList = ({ pokemons }) => {
@@ -15,7 +15,7 @@ const PokemonList = ({ pokemons }) => {
 }
 
 const mapStateToProps = (state) => {
-    return { pokemons: state.pokemons }
+    return { pokemons: selectPokemons(state.pokemons, state.filters) }
 }
 
 export default connect(mapStateToProps)(PokemonList)

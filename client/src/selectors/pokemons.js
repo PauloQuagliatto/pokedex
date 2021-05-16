@@ -1,9 +1,8 @@
 /* eslint-disable import/no-anonymous-default-export */
 
-export default (pokemons, { text, sortBy }) => {
+export default (pokemons, { name, sortBy }) => {
     return pokemons.filter((pokemon) => {
-      console.log(pokemon.name)
-        const nameMatch = pokemon.name.toLowerCase().includes(text.toLowerCase())
+        const nameMatch = pokemon.name.toLowerCase().includes(name.toLowerCase())
 
         return nameMatch
     // eslint-disable-next-line array-callback-return
