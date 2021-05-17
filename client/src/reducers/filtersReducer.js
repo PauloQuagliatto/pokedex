@@ -10,7 +10,7 @@ const filtersReducerDefaultState = {
     startNumber: '',
     endNumber: '',
     generation: '',
-    sortBy: 'smallesNumber'
+    sortBy: 'smallestNumber'
 }
 
 export default (state = filtersReducerDefaultState, action) => {
@@ -44,6 +44,11 @@ export default (state = filtersReducerDefaultState, action) => {
             return {
                 ...state,
                 height: action.height
+            }
+        case 'SET_GENERATION_FILTER':
+            return {
+                ...state,
+                generation: action.generation
             }
         case 'SET_START_NUMBER':
             return {

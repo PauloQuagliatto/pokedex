@@ -18,7 +18,6 @@ const setPokemons = (pokemons) =>({
           })
         })
         dispatch(setPokemons(pokemons))
-        console.log("pokemons fetched")
       })
       .catch(err => console.log('error: ' + err ))
     }
