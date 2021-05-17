@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { connect } from 'react-redux'
 import { filterByName } from '../actions/filters'
 
-const Filters = (props) => {
+const InputFilter = (props) => {
     const [name, setName] = useState(props.filters.name)
     
     const changeNameFilter = (e) => {
@@ -12,10 +12,11 @@ const Filters = (props) => {
     }
 
     return(
-    <div>
+    <div className="input-box">
+        <img className="search-icon" src="./assets/search-icon.svg" alt="search-icon"/>
         <input 
             className="filter-input"
-            placeholder="Digite nome do pokemon"
+            placeholder="What Pokemon are you looking for?"
             onChange={changeNameFilter}
             value={name}
         />
@@ -26,4 +27,4 @@ const mapStateToProps = (state) => {
     return { filters: state.filters }
 }
 
-export default connect(mapStateToProps)(Filters)
+export default connect(mapStateToProps)(InputFilter)
