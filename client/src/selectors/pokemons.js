@@ -1,6 +1,6 @@
 /* eslint-disable import/no-anonymous-default-export */
 
-export default (pokemons, { name, type, weakness, stage, weight, height, startNumber, endNumber, generation, sortBy }) => {
+export default (pokemons, { name, types, weakness, stage, weight, height, startNumber, endNumber, generation, sortBy }) => {
   return pokemons.filter((pokemon) => {
     const nameMatch = pokemon.name.toLowerCase().includes(name.toLowerCase())
 

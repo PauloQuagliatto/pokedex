@@ -1,29 +1,16 @@
-import React, { useState } from 'react'
+import React, { Fragment, useState } from 'react'
 import { connect } from 'react-redux'
-import { filterByName, sortByBiggestNumber, sortBySmallestNumber } from '../actions/filters'
+import { filterByName } from '../actions/filters'
 
 const InputFilter = (props) => {
-    const [name, setName] = useState(props.filters.name)
-    const [sort, setSort] = useState(props.filters.sortBy)
+    const [name, setName] = useState('')
     const changeNameFilter = (e) => {
         const newName = e.target.value
         setName(newName)
         props.dispatch(filterByName(newName))
     }
-    const changeSort = () => {
-        if (sort === 'smallestNumber') {
-            setSort('biggestNumber')
-            console.log(sort)
-            props.dispatch(sortByBiggestNumber(sort))
-        } else if (sort === 'biggestNumber') {
-            setSort('smallestNumber')
-            console.log(sort)
-            props.dispatch(sortBySmallestNumber(sort))
-        }
-    }
     return (
-        <div className="input-box">
-            <div>
+            <div className="input-box">
                 <img className="search-icon" src="./assets/search-icon.svg" alt="search-icon" />
                 <input
                     className="filter-input"
@@ -32,14 +19,6 @@ const InputFilter = (props) => {
                     value={name}
                 />
             </div>
-            <button
-                className="filter-input"
-                placeholder={sort}
-                onClick={changeSort}
-                value={sort}
-            />
-
-        </div>
     )
 }
 

@@ -16,10 +16,18 @@ body {
   font-family: 'SF Pro Display';
 }
 
+
 button {
   cursor: pointer;
 }
 
 button:disabled {
   cursor: default;
+}
+
+.is-active {
+  text-decoration: none;
+  &:visited {
+    color: $text-number;
+  }
 }

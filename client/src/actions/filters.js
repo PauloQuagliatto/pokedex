@@ -3,10 +3,9 @@ export const filterByName = (name = '') => ({
     name
 })
 
-export const filterByType = (type = '') => ({
+export const filterByType = (pokemonType) => ({
     type: 'SET_TYPE_FILTER',
-    // eslint-disable-next-line no-dupe-keys
-    type
+    pokemonType
 })
 
 export const filterByWeakness = (weakness = '') => ({

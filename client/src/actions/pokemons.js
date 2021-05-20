@@ -1,5 +1,5 @@
 //SET_POKEMONS
-const setPokemons = (pokemons) =>({
+const setPokemons = (pokemons) => ({
     type: 'SET_POKEMONS',
     pokemons
   })
@@ -12,10 +12,11 @@ const setPokemons = (pokemons) =>({
       .then(pokemonsFetched => { 
         const pokemons = []
         pokemonsFetched.forEach((pokemonFetched) => {
+          if (pokemonFetched.id <= 151){
             pokemons.push({
             id: pokemonFetched.id,
             ...pokemonFetched
-          })
+          })}
         })
         dispatch(setPokemons(pokemons))
       })
