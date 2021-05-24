@@ -2,7 +2,7 @@
 
 const filtersReducerDefaultState = {
     name: '',
-    types: [],
+    types: ['flying'],
     weakness: '',
     stage: '',
     weight: '',
@@ -20,12 +20,10 @@ export default (state = filtersReducerDefaultState, action) => {
                 ...state,
                 name: action.name
             }
-        case 'SET_TYPE_FILTER':
+        case 'ADD_TYPE_TO_FILTER':
             return {
                 ...state,
-                types: [
-                    action.type
-                ]
+                types: [...state.types, action.pokemonType]
             }
         case 'SET_WEAKNESS_FILTER':
             return {

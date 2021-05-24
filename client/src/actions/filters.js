@@ -3,8 +3,8 @@ export const filterByName = (name = '') => ({
     name
 })
 
-export const filterByType = (pokemonType) => ({
-    type: 'SET_TYPE_FILTER',
+export const addToTypeFilter = (pokemonType = '') => ({
+    type: 'ADD_TO_TYPE_FILTER',
     pokemonType
 })
 
@@ -58,3 +58,4 @@ export const sortBySmallestNumber = () => ({
 export const sortByBiggestNumber = () => ({
     type: 'SORT_BY_BIGGEST_NUMBER'
 })
+
