@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { v4 as uuid } from 'uuid'
 
 const PokemonCard = ({ id, name, image, types }) => {
-    const idFormat = (id) => {
+    const formattedId = (id) => {
         const stringId = id.toString()
         if (id < 10) {
             return `#00${stringId}`
@@ -14,7 +14,7 @@ const PokemonCard = ({ id, name, image, types }) => {
         }
     }
 
-    const capitalizeFirstLetter = (string) => {
+    const formattedName = (string) => {
         return string.charAt(0).toUpperCase() + string.slice(1);
     }
 
@@ -31,8 +31,8 @@ const PokemonCard = ({ id, name, image, types }) => {
             <Link to={`/pokemon/${id}`} className="card-container is-active">
                 <div className={typeToVectorCSS(types)}>
                     <div className="card-texts-container">
-                        <h1 className="card-pokemon-id">{idFormat(id)}</h1>
-                        <h1 className="pokemon-name">{capitalizeFirstLetter(name)}</h1>
+                        <h1 className="card-pokemon-id">{formattedId(id)}</h1>
+                        <h1 className="pokemon-name">{formattedName(name)}</h1>
                         <div>
                             <div className="card-box-types">{types.map((type) => {
                                 return <p key={uuid()} className={typeBackgroundColor(type)}>{type}</p>
