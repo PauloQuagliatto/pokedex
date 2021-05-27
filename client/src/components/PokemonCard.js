@@ -27,25 +27,33 @@ const PokemonCard = ({ id, name, image, types }) => {
         return `pokemon-type type--${type}`
     }
 
+    const chooseBadge = (badgeType) => {
+        return `./assets/Badges/${badgeType}.svg`
+    }
     return (
-            <Link to={`/pokemon/${id}`} className="card-container is-active">
-                <div className={typeToVectorCSS(types)}>
-                    <div className="card-texts-container">
-                        <h1 className="card-pokemon-id">{formattedId(id)}</h1>
-                        <h1 className="pokemon-name">{formattedName(name)}</h1>
-                        <div>
-                            <div className="card-box-types">{types.map((type) => {
-                                return <p key={uuid()} className={typeBackgroundColor(type)}>{type}</p>
-                            })}</div>
-                        </div>
-                    </div>
-                    <img className="pattern" src="./assets/pattern-small.svg" alt="pattern-small" />
-                    <div className="card-image-container">
-                        <img className="pokeball-image" src="./assets/Pokeball.png" alt="pokeball" />
-                        <img className="pokemon-image" src={image} alt={name} />
+        <Link to={`/pokemon/${id}`} className="card-container is-active">
+            <div className={typeToVectorCSS(types)}>
+                <div className="card-texts-container">
+                    <h1 className="card-pokemon-id">{formattedId(id)}</h1>
+                    <h1 className="pokemon-name">{formattedName(name)}</h1>
+                    <div>
+                        <div className="card-box-types">{types.map((type) => {
+                            return <img
+                                key={uuid()}
+                                className={typeBackgroundColor(type)}
+                                src={chooseBadge(type)}
+                                alt={type}
+                            />
+                        })}</div>
                     </div>
                 </div>
-            </Link>
+                <img className="pattern" src="./assets/pattern-small.svg" alt="pattern-small" />
+                <div className="card-image-container">
+                    <img className="pokeball-image" src="./assets/Pokeball.png" alt="pokeball" />
+                    <img className="pokemon-image" src={image} alt={name} />
+                </div>
+            </div>
+        </Link>
     )
 }
 

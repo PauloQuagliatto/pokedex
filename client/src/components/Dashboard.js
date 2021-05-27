@@ -12,7 +12,7 @@ const Dashboard = ({ startSetPokemons }) => {
     }, [])
 
     const dropShadow = () => {
-        if(window.scrollY > 90){
+        if(window.scrollY > 45){
             setShadow(true)
         } else {
             setShadow(false)
