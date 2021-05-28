@@ -4,7 +4,7 @@ export default (pokemons, { name, types, weakness, stage, weight, height, startN
   return pokemons.filter((pokemon) => {
     const nameMatch = pokemon.name.toLowerCase().includes(name.toLowerCase())
     const typesMatch = types.length === 0 ? true : compareTypes(pokemon.types, types)
-
+    const weaknessMatch = weakness.length === 0 ? true : isWeaker(pokemon.typeDefences, weakness)
     return nameMatch && typesMatch
     // eslint-disable-next-line array-callback-return
   }).sort((a, b) => {
@@ -45,4 +45,12 @@ const compareTypes = (pokemonTypes, filterTypes) => {
   }
 
   return false
+}
+
+const isWeaker = (pokemonWeakness, filterWeakness) => {
+  let comparationResults = []
+
+  for (let i = 0; i < filterWeakness.length; i++) {
+    console.log(pokemonWeakness.filterWeakness[i])
+  }
 }

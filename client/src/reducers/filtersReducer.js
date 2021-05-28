@@ -20,7 +20,7 @@ export default (state = filtersReducerDefaultState, action) => {
                 ...state,
                 name: action.name
             }
-        case 'SET_TO_FILTER':
+        case 'SET_TYPE_FILTER':
             return {
                 ...state,
                 types: action.types

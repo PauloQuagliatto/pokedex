@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Fragment } from 'react'
 
 const TypeFilter = (props) => {
-    const [bugSelected, setBugSelected] = useState('./assets/icon/bug.svg')
+    const [bugSelected, setBugSelected] = useState(props.typesFilter.length === 0 ? './assets/icon/bug.svg' : props.typesFilter.map((typesFiltered) => typesFiltered === 'bug' ? './assets/icon/bugSelected.svg' : './assets/icon/bug.svg'))
     const [darkSelected, setDarkSelected] = useState('./assets/icon/dark.svg')
     const [dragonSelected, setDragonSelected] = useState('./assets/icon/dragon.svg')
     const [electricSelected, setElectricSelected] = useState('./assets/icon/electric.svg')
@@ -20,154 +20,227 @@ const TypeFilter = (props) => {
     const [rockSelected, setRockSelected] = useState('./assets/icon/rock.svg')
     const [steelSelected, setSteelSelected] = useState('./assets/icon/steel.svg')
     const [waterSelected, setWaterSelected] = useState('./assets/icon/water.svg')
-    const types = []
+    const [types, setTypes] = useState(props.typesFilter)
 
     const handleSelectBug = () => {
-        if(bugSelected === './assets/icon/bug.svg'){
+        const match = types.length === 0 ? false : types.map((type) => type.toLowerCase().match('bug'))
+        if (!match) {
+            setTypes(types => [...types, 'bug'])
+            props.setTypesFilter(types)
             setBugSelected('./assets/icon/bugSelected.svg')
-            types.push('bug')
-            console.log(types)
-            props.setTypeFilter(types)
-        }else {
-            types.filter((type) => type !== 'bug')
-            console.log(types)
-            props.setTypeFilter(types)
+        } else {
+            setTypes(types.filter((type) => type !== 'bug'))
+            props.setTypesFilter(types)
             setBugSelected('./assets/icon/bug.svg')
         }
     }
 
     const handleSelectDark = () => {
-        if(darkSelected === './assets/icon/dark.svg'){
+        const match = types.length === 0 ? false : types.map((type) => type.toLowerCase().match('dark'))
+        if (!match) {
             setDarkSelected('./assets/icon/darkSelected.svg')
-            types.push('dark')
-            props.setTypeFilter(types)
-        }else{
+            setTypes(types => [...types, 'dark'])
+            props.setTypesFilter(types)
+        } else {
+            setTypes(types.filter((type) => type !== 'dark'))
+            props.setTypesFilter(types)
             setDarkSelected('./assets/icon/dark.svg')
         }
     }
 
     const handleSelectDragon = () => {
-        if(dragonSelected === './assets/icon/dragon.svg'){
+        const match = types.length === 0 ? false : types.map((type) => type.toLowerCase().match('dragon'))
+        if (!match) {
             setDragonSelected('./assets/icon/dragonSelected.svg')
-        }else{
+            setTypes(types => [...types, 'dragon'])
+            props.setTypesFilter(types)
+        } else {
+            setTypes(types.filter((type) => type !== 'dragon'))
+            props.setTypeFilter(types)
             setDragonSelected('./assets/icon/dragon.svg')
         }
     }
 
     const handleSelectElectric = () => {
-        if(electricSelected === './assets/icon/electric.svg'){
+        const match = types.length === 0 ? false : types.map((type) => type.toLowerCase().match('electric'))
+        if (!match) {
+            setTypes(types => [...types, 'electric'])
+            props.setTypesFilter(types)
             setElectricSelected('./assets/icon/electricSelected.svg')
-        }else{
+        } else {
+            setTypes(types.filter((type) => type !== 'electric'))
+            props.setTypesFilter(types)
             setElectricSelected('./assets/icon/electric.svg')
         }
     }
 
     const handleSelectFairy = () => {
-        if(fairySelected === './assets/icon/fairy.svg'){
+        const match = types.length === 0 ? false : types.map((type) => type.toLowerCase().match('fairy'))
+        if (!match) {
+            setTypes(types => [...types, 'fairy'])
+            props.setTypesFilter(types)
             setFairySelected('./assets/icon/fairySelected.svg')
-        }else{
+        } else {
+            setTypes(types.filter((type) => type !== 'fairy'))
+            props.setTypesFilter(types)
             setFairySelected('./assets/icon/fairy.svg')
         }
     }
 
     const handleSelectFighting = () => {
-        if(fightingSelected === './assets/icon/fighting.svg'){
+        const match = types.length === 0 ? false : types.map((type) => type.toLowerCase().match('fighting'))
+        if (!match) {
+            setTypes(types => [...types, 'fighting'])
+            props.setTypesFilter(types)
             setFightingSelected('./assets/icon/fightingSelected.svg')
-        }else{
+        } else {
+            setTypes(types.filter((type) => type !== 'fighting'))
+            props.setTypesFilter(types)
             setFightingSelected('./assets/icon/fighting.svg')
         }
     }
 
     const handleSelectFire = () => {
-        if(fireSelected === './assets/icon/fire.svg'){
+        const match = types.length === 0 ? false : types.map((type) => type.toLowerCase().match('fire'))
+        if (!match) {
+            setTypes(types => [...types, 'fire'])
+            props.setTypesFilter(types)
             setFireSelected('./assets/icon/fireSelected.svg')
-        }else{
+        } else {
+            setTypes(types.filter((type) => type !== 'fire'))
+            props.setTypseFilter(types)
             setFireSelected('./assets/icon/fire.svg')
         }
     }
 
     const handleSelectFlying = () => {
-        if(flyingSelected === './assets/icon/flying.svg'){
+        const match = types.length === 0 ? false : types.map((type) => type.toLowerCase().match('flying'))
+        if (!match) {
+            setTypes(types => [...types, 'flying'])
+            props.setTypesFilter(types)
             setFlyingSelected('./assets/icon/flyingSelected.svg')
-        }else{
+        } else {
+            setTypes(types.filter((type) => type !== 'flying'))
+            props.setTypesFilter(types)
             setFlyingSelected('./assets/icon/flying.svg')
         }
     }
 
     const handleSelectGhost = () => {
-        if(ghostSelected === './assets/icon/ghost.svg'){
+        const match = types.length === 0 ? false : types.map((type) => type.toLowerCase().match('ghost'))
+        if (!match) {
+            setTypes(types => [...types, 'ghost'])
+            props.setTypesFilter(types)
             setGhostSelected('./assets/icon/ghostSelected.svg')
-        }else{
+        } else {
+            setTypes(types.filter((type) => type !== 'ghost'))
+            props.setTypesFilter(types)
             setGhostSelected('./assets/icon/ghost.svg')
         }
     }
 
     const handleSelectGrass = () => {
-        if(grassSelected === './assets/icon/grass.svg'){
+        if (grassSelected === './assets/icon/grass.svg') {
+            setTypes(types => [...types, 'grass'])
+            props.setTypesFilter(types)
             setGrassSelected('./assets/icon/grasstSelected.svg')
-        }else{
+        } else {
+            setTypes(types.filter((type) => type !== 'grass'))
+            props.setTypesFilter(types)
             setGrassSelected('./assets/icon/grass.svg')
         }
     }
 
     const handleSelectGround = () => {
-        if(groundSelected === './assets/icon/ground.svg'){
+        if (groundSelected === './assets/icon/ground.svg') {
+            setTypes(types => [...types, 'ground'])
+            props.setTypesFilter(types)
             setGroundSelected('./assets/icon/groundtSelected.svg')
-        }else{
+        } else {
+            setTypes(types.filter((type) => type !== 'ground'))
+            props.setTypesFilter(types)
             setGroundSelected('./assets/icon/ground.svg')
         }
     }
     const handleSelectIce = () => {
-        if(iceSelected === './assets/icon/ice.svg'){
+        if (iceSelected === './assets/icon/ice.svg') {
+            setTypes(types => [...types, 'ice'])
+            props.setTypesFilter(types)
             setIceSelected('./assets/icon/iceSelected.svg')
-        }else{
+        } else {
+            setTypes(types.filter((type) => type !== 'ice'))
+            props.setTypesFilter(types)
             setIceSelected('./assets/icon/ice.svg')
         }
     }
 
     const handleSelectNormal = () => {
-        if(normalSelected === './assets/icon/normal.svg'){
+        if (normalSelected === './assets/icon/normal.svg') {
+            setTypes(types => [...types, 'normal'])
+            props.setTypesFilter(types)
             setNormalSelected('./assets/icon/normalSelected.svg')
-        }else{
+        } else {
+            setTypes(types.filter((type) => type !== 'normal'))
+            props.setTypesFilter(types)
             setNormalSelected('./assets/icon/normal.svg')
         }
     }
 
     const handleSelectPoison = () => {
-        if(poisonSelected === './assets/icon/poison.svg'){
+        if (poisonSelected === './assets/icon/poison.svg') {
+            setTypes(types => [...types, 'poison'])
+            props.setTypesFilter(types)
             setPoisonSelected('./assets/icon/poisonSelected.svg')
-        }else{
+        } else {
+            setTypes(types.filter((type) => type !== 'poison'))
+            props.setTypesFilter(types)
             setPoisonSelected('./assets/icon/poison.svg')
         }
     }
 
     const handleSelectPsychic = () => {
-        if(psychicSelected === './assets/icon/psychic.svg'){
+        if (psychicSelected === './assets/icon/psychic.svg') {
+            setTypes(types => [...types, 'psychic'])
+            props.setTypesFilter(types)
             setPsychicSelected('./assets/icon/psychicSelected.svg')
-        }else{
+        } else {
+            setTypes(types.filter((type) => type !== 'psychic'))
+            props.setTypesFilter(types)
             setPsychicSelected('./assets/icon/psychic.svg')
         }
     }
 
     const handleSelectRock = () => {
-        if(rockSelected === './assets/icon/rock.svg'){
+        if (rockSelected === './assets/icon/rock.svg') {
+            setTypes(types => [...types, 'rock'])
+            props.setTypesFilter(types)
             setRockSelected('./assets/icon/rockSelected.svg')
-        }else{
+        } else {
+            setTypes(types.filter((type) => type !== 'rock'))
+            props.setTypesFilter(types)
             setRockSelected('./assets/icon/rock.svg')
         }
     }
 
     const handleSelectSteel = () => {
-        if(steelSelected === './assets/icon/steel.svg'){
+        if (steelSelected === './assets/icon/steel.svg') {
+            setTypes(types => [...types, 'steel'])
+            props.setTypesFilter(types)
             setSteelSelected('./assets/icon/steelSelected.svg')
-        }else{
+        } else {
+            setTypes(types.filter((type) => type !== 'steel'))
+            props.setTypesFilter(types)
             setSteelSelected('./assets/icon/steel.svg')
         }
     }
     const handleSelectWater = () => {
-        if(waterSelected === './assets/icon/water.svg'){
+        if (waterSelected === './assets/icon/water.svg') {
+            setTypes(types => [...types, 'water'])
+            props.setTypesFilter(types)
             setWaterSelected('./assets/icon/waterSelected.svg')
-        }else{
+        } else {
+            setTypes(types.filter((type) => type !== 'water'))
+            props.setTypesFilter(types)
             setWaterSelected('./assets/icon/water.svg')
         }
     }

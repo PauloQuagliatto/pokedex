@@ -25,7 +25,7 @@ const Dashboard = ({ startSetPokemons }) => {
     }
 
     const dropShadow = () => {
-        if(window.scrollY > 45){
+        if(window.scrollY > 45 && !isSortOpen && !isFiltersOpen){
             setShadow(true)
         } else {
             setShadow(false)

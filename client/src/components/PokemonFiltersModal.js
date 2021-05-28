@@ -12,19 +12,19 @@ import SelectTypeFilter from './SelectTypeFilter'
 import SelectWeaknessFilter from './SelectWeaknessFilter'
 
 const PokemonFiltersModal = (props) => {
-    const [typeFilter, setTypeFilter] = useState([])
+    const [typesFilter, setTypesFilter] = useState([])
     const [weaknessFilter, setWeaknessFilter] = useState([])
     const [heightFilter, setHeightFilter] = useState('')
     const [weightFilter, setWeight] = useState('')
     const [stageFilter, setStage] = useState('')
 
     const handleFilterAndClose = () => {
-        props.dispatch(filterByType(typeFilter))
+        props.dispatch(filterByType(typesFilter))
         props.closeModal()
     }
     useEffect(() => {
-        console.log(typeFilter)
-    }, [typeFilter])
+        console.log(typesFilter)
+    },[typesFilter])
     return (
         <Modal
             isOpen={!!props.isOpen}
@@ -56,7 +56,7 @@ const PokemonFiltersModal = (props) => {
             }}
         >
             <div>
-                <SelectTypeFilter setTypeFilter={setTypeFilter} />
+                <SelectTypeFilter typesFilter={typesFilter} setTypesFilter={setTypesFilter} />
             </div>
             <div>
                 <SelectWeaknessFilter />
