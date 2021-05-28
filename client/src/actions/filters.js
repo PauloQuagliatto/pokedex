@@ -3,12 +3,12 @@ export const filterByName = (name = '') => ({
     name
 })
 
-export const addToTypeFilter = (pokemonType = '') => ({
-    type: 'ADD_TO_TYPE_FILTER',
-    pokemonType
+export const filterByType = (types = []) => ({
+    type: 'SET_TYPE_FILTER',
+    types
 })
 
-export const filterByWeakness = (weakness = '') => ({
+export const filterByWeakness = (weakness = []) => ({
     type: 'SET_WEAKNESS_FILTER',
     weakness
 })

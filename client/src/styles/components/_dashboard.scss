@@ -1,11 +1,10 @@
 .dashboard-fix {
     position: fixed;
-    z-index: 10000;
-    background-color: $background-white;
-    
+    background-color: $background-white;  
 }
 
 .drop-shadow {
+    z-index: 3;
     border-radius: 5px;
     box-shadow: 0px 5px rgba(0, 0, 0, 0.075);
 }
@@ -36,4 +35,7 @@
     background-size: cover;
     background-image: url('../../assets/pokeball-big.svg');
     background-repeat: no-repeat;
+}
+.z-config-goback {
+    z-index: -10000;
 }

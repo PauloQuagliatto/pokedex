@@ -1,0 +1,18 @@
+.sort-box { 
+    margin-top: 15px;
+    display: grid;
+}
+
+.sort-item {
+    width: 720px;
+    height: 70px;
+    margin-bottom: 20px;
+    background: #F2F2F2;
+    
+    border-style: none;
+    border-radius: 5px;
+}
+
+.sort-item__selected {    
+    background: $background-type-psychic;
+}

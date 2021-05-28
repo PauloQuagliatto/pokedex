@@ -34,7 +34,7 @@ const PokemonCard = ({ id, name, image, types }) => {
         <Link to={`/pokemon/${id}`} className="card-container is-active">
             <div className={typeToVectorCSS(types)}>
                 <div className="card-texts-container">
-                    <h1 className="card-pokemon-id">{formattedId(id)}</h1>
+                    <h3 className="card-pokemon-id">{formattedId(id)}</h3>
                     <h1 className="pokemon-name">{formattedName(name)}</h1>
                     <div>
                         <div className="card-box-types">{types.map((type) => {
